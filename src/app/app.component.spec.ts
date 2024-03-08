@@ -56,5 +56,10 @@ describe('AppComponent', () => {
     expect(app.fizzBuzz(0)).toEqual('Numero equivocado');
   });
 
-
+  
+  it(`Probar numero negativo`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.fizzBuzz(-2)).toEqual('Numero equivocado');
+  });
 });
