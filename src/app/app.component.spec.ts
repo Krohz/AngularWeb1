@@ -13,23 +13,48 @@ describe('AppComponent', () => {
       ],
     }).compileComponents();
   });
-
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
+/*
   it(`should have as title 'workspace'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('workspace');
   });
-
-  it('should render title', () => {
+*/
+  it(`Probar multiplo por 3`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('workspace app is running!');
+    const app = fixture.componentInstance;
+    expect(app.fizzBuzz(3)).toEqual('Fizz');
   });
+
+  it(`Probar multiplo por 5`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.fizzBuzz(20)).toEqual('Buzz');
+  });
+
+  it(`Probar multiplo por 3 y 5`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.fizzBuzz(15)).toEqual('FizzBuzz');
+  });
+
+  it(`No es multiplo de 3 y 5`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.fizzBuzz(19)).toEqual(19);
+  });
+
+  it(`Probar numero 101`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.fizzBuzz(101)).toEqual('Numero equivocado');
+  });
+
+  it(`Probar numero 0`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.fizzBuzz(0)).toEqual('Numero equivocado');
+  });
+
+
 });
