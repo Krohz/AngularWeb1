@@ -17,7 +17,7 @@ const routes: Routes = [
   {
     path:'crear-cuenta',
     component: CrearCuentaComponent
-  }
+  },
 ];
 
 @NgModule({

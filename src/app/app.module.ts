@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SidebarComponent,
-    CrearCuentaComponent
+    CrearCuentaComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

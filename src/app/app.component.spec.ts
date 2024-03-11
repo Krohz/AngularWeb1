@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  /*
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -13,6 +14,7 @@ describe('AppComponent', () => {
       ],
     }).compileComponents();
   });
+  */
 /*
   it(`should have as title 'workspace'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -20,46 +22,29 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('workspace');
   });
 */
-  it(`Probar multiplo por 3`, () => {
+  it(`Probar palabra chiquita`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.fizzBuzz(3)).toEqual('Fizz');
+    expect(app.anagrama('fresa','frase')).toEqual(true);
   });
-
-  it(`Probar multiplo por 5`, () => {
+  it(`Probar palabra igual`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.fizzBuzz(20)).toEqual('Buzz');
+    expect(app.anagrama('asco','asco')).toEqual(false);
   });
-
-  it(`Probar multiplo por 3 y 5`, () => {
+  it(`Probar palabra con espacio`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.fizzBuzz(15)).toEqual('FizzBuzz');
+    expect(app.anagrama('c o c l e','cleco ')).toEqual(true);
   });
-
-  it(`No es multiplo de 3 y 5`, () => {
+  it(`Probar palabra NO ANAGRAMA`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.fizzBuzz(19)).toEqual(19);
+    expect(app.anagrama('robot','reloj')).toEqual(false);
   });
-
-  it(`Probar numero 101`, () => {
+  it(`Probar una palabra con mayuscula`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.fizzBuzz(101)).toEqual('Numero equivocado');
-  });
-
-  it(`Probar numero 0`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.fizzBuzz(0)).toEqual('Numero equivocado');
-  });
-
-  
-  it(`Probar numero negativo`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.fizzBuzz(-2)).toEqual('Numero equivocado');
+    expect(app.anagrama('Asco','coSa')).toEqual(true);
   });
 });
